@@ -1,0 +1,17 @@
+[33mcommit c626f8fc3597cad19a52eb38c48a471834fceeea[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/Aula3[m[33m, [m[1;32mAula3[m[33m)[m
+Author: Matheus <matheusferreirasjc@gmail.com>
+Date:   Tue Aug 26 19:29:45 2025 -0300
+
+    Issue 1- Cria uma entidade no banco de dados apartir do NinjaModel [Aula 05]
+
+[33mcommit f7687a1d9625b461509f994d1a6e561b43dc26fb[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Matheus <matheusferreirasjc@gmail.com>
+Date:   Tue Aug 26 18:35:27 2025 -0300
+
+    Criado a Controller [Aula3]
+
+[33mcommit 4aa044a1fa204d7669dda5d35d27ba1c3d3bb7f2[m
+Author: Matheus <matheusferreirasjc@gmail.com>
+Date:   Mon Aug 25 20:28:45 2025 -0300
+
+    first commit
