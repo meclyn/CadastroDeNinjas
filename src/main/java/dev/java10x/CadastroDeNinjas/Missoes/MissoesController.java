@@ -30,9 +30,9 @@ public class MissoesController {
     }
 
     //Mostrar por ID
-    @GetMapping("/mostrarPorID")
-    public String mostrarMissaoPorID(){
-        return "Mostrar missoes por ID";
+    @GetMapping("/listar/{id}")
+    public MissoesModel listarMissaoPorID(@PathVariable Long id){
+        return missoesService.listarMissoesPorId(id);
     }
 
     //Atualizar
