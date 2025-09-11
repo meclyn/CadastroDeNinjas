@@ -36,5 +36,12 @@ public class MissoesService {
     }
 
     //Editar Missao
+    public MissoesModel atualizarMissao(Long id, MissoesModel missaoAtualizado){
+        if(missoesRepository.existsById(id)){
+            missaoAtualizado.setId(id);
+            return missoesRepository.save(missaoAtualizado);
+        }
+        return null;
+    }
 
 }
