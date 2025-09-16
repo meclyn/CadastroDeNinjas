@@ -37,8 +37,8 @@ public class MissoesController {
 
     //Atualizar
     @PutMapping("/alterarID")
-    public String alterarMissao(){
-        return "Missao atualizada";
+    public MissaoDTO alterarMissao(@PathVariable Long id, @RequestBody MissaoDTO missaoAtualizada){
+        return missoesService.atualizarMissao(id, missaoAtualizada);
     }
 
     //Deletar
