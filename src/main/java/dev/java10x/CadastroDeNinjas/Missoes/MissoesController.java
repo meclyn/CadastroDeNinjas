@@ -19,7 +19,7 @@ public class MissoesController {
 
     //Criar
     @PostMapping("/criar")
-    public MissoesModel criarMissao(@RequestBody MissoesModel missao){
+    public MissaoDTO criarMissao(@RequestBody MissaoDTO missao){
         return missoesService.criarMissao(missao);
     }
 
