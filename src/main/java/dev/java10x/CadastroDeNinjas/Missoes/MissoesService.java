@@ -45,6 +45,7 @@ public class MissoesService {
     }
 
     //Editar Missao
+feature/T-001-criar-mapper-dto
     public MissaoDTO atualizarMissao(Long id, MissaoDTO MissaoDTO) {
         Optional<MissoesModel> missaoExistente = missoesRepository.findById(id);
         if (missaoExistente.isPresent()) {
@@ -56,4 +57,14 @@ public class MissoesService {
 
         return null;
     }
+
+    public MissoesModel atualizarMissao(Long id, MissoesModel missaoAtualizado){
+        if(missoesRepository.existsById(id)){
+            missaoAtualizado.setId(id);
+            return missoesRepository.save(missaoAtualizado);
+        }
+        return null;
+    }
+
+main
 }

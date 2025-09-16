@@ -1,6 +1,7 @@
 package dev.java10x.CadastroDeNinjas.Missoes;
 
 
+import dev.java10x.CadastroDeNinjas.Ninjas.NinjaModel;
 import dev.java10x.CadastroDeNinjas.Ninjas.NinjaService;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,8 +37,13 @@ public class MissoesController {
     }
 
     //Atualizar
+ feature/T-001-criar-mapper-dto
     @PutMapping("/alterarID")
     public MissaoDTO alterarMissao(@PathVariable Long id, @RequestBody MissaoDTO missaoAtualizada){
+
+    @PutMapping("/alterar/{id}")
+    public MissoesModel alterarMissao(@PathVariable Long id, @RequestBody MissoesModel missaoAtualizada){
+main
         return missoesService.atualizarMissao(id, missaoAtualizada);
     }
 
