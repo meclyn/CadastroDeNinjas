@@ -1,10 +1,12 @@
 package dev.java10x.CadastroDeNinjas.Missoes;
 
+import dev.java10x.CadastroDeNinjas.Ninjas.NinjaDTO;
 import dev.java10x.CadastroDeNinjas.Ninjas.NinjaModel;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class MissoesService {
@@ -17,14 +19,17 @@ public class MissoesService {
     }
 
     //Listar todas as missões
-    public List<MissoesModel> listarMissoes(){
-        return missoesRepository.findAll();
+    public List<MissaoDTO> listarMissoes(){
+        List<MissoesModel> missoes = missoesRepository.findAll();
+        return missoes.stream()
+                .map(missaoMapper::map)
+                .collect(Collectors.toList());
     }
 
     //Listar por ID
-    public MissoesModel listarMissoesPorId(Long id){
+    public MissaoDTO listarMissoesPorId(Long id){
         Optional<MissoesModel> missoesPorId = missoesRepository.findById(id);
-        return missoesPorId.orElse(null);
+        return missoesPorId.map(missaoMapper::map).orElse(null);
     }
 
     //Criar Missao
@@ -40,5 +45,15 @@ public class MissoesService {
     }
 
     //Editar Missao
+    public MissaoDTO atualizarMissao(Long id, MissaoDTO MissaoDTO) {
+        Optional<MissoesModel> missaoExistente = missoesRepository.findById(id);
+        if (missaoExistente.isPresent()) {
+            MissoesModel missaoAtualizada = missaoMapper.map(MissaoDTO);
+            missaoAtualizada.setId(id);
+            MissoesModel ninjaSalvo = missoesRepository.save(missaoAtualizada);
+            return missaoMapper.map(ninjaSalvo);
+        }
 
+        return null;
+    }
 }

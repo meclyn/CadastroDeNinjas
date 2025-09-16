@@ -25,13 +25,13 @@ public class MissoesController {
 
     //Mostrar
     @GetMapping("/mostrar")
-    public List<MissoesModel> listarMissoes(){
+    public List<MissaoDTO> listarMissoes(){
         return missoesService.listarMissoes();
     }
 
     //Mostrar por ID
     @GetMapping("/listar/{id}")
-    public MissoesModel listarMissaoPorID(@PathVariable Long id){
+    public MissaoDTO listarMissaoPorID(@PathVariable Long id){
         return missoesService.listarMissoesPorId(id);
     }
 
