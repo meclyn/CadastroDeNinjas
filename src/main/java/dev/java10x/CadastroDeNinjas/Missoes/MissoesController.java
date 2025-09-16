@@ -20,25 +20,30 @@ public class MissoesController {
 
     //Criar
     @PostMapping("/criar")
-    public MissoesModel criarMissao(@RequestBody MissoesModel missao){
+    public MissaoDTO criarMissao(@RequestBody MissaoDTO missao){
         return missoesService.criarMissao(missao);
     }
 
     //Mostrar
     @GetMapping("/mostrar")
-    public List<MissoesModel> listarMissoes(){
+    public List<MissaoDTO> listarMissoes(){
         return missoesService.listarMissoes();
     }
 
     //Mostrar por ID
     @GetMapping("/listar/{id}")
-    public MissoesModel listarMissaoPorID(@PathVariable Long id){
+    public MissaoDTO listarMissaoPorID(@PathVariable Long id){
         return missoesService.listarMissoesPorId(id);
     }
 
     //Atualizar
+ feature/T-001-criar-mapper-dto
+    @PutMapping("/alterarID")
+    public MissaoDTO alterarMissao(@PathVariable Long id, @RequestBody MissaoDTO missaoAtualizada){
+
     @PutMapping("/alterar/{id}")
     public MissoesModel alterarMissao(@PathVariable Long id, @RequestBody MissoesModel missaoAtualizada){
+main
         return missoesService.atualizarMissao(id, missaoAtualizada);
     }
 
