@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class MissoesService {
+final class MissoesService {
     private MissoesRepository missoesRepository;
     private MissaoMapper missaoMapper;
 

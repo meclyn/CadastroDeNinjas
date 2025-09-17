@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
-public class NinjaService {
+final class NinjaService {
 
     private NinjaRepository ninjaRepository;
     private NinjaMapper ninjaMapper;
