@@ -1,10 +1,5 @@
 package dev.java10x.CadastroDeNinjas.Missoes;
 
-
-import dev.java10x.CadastroDeNinjas.Ninjas.NinjaDTO;
-import dev.java10x.CadastroDeNinjas.Ninjas.NinjaModel;
-import dev.java10x.CadastroDeNinjas.Ninjas.NinjaService;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
