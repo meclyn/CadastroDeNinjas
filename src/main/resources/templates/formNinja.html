@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Ninja</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1 th:text="${ninja.id} != null ? 'Editar Ninja' : 'Adicionar Ninja'"></h1>
+
+<form th:action="${ninja.id} != null ? @{'/ninjas/ui/atualizar/' + ${ninja.id}} : @{/ninjas/ui/salvar}"
+      th:object="${ninja}" method="post">
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" th:field="*{nome}" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" th:field="*{email}" required>
+
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade" th:field="*{idade}" required>
+
+    <label for="rank">Rank:</label>
+    <input type="text" id="rank" th:field="*{rank}" required>
+
+    <button type="submit">Salvar</button>
+</form>
+
+<a th:href="@{/ninjas/ui/listar}">Voltar</a>
+</body>
+</html>
